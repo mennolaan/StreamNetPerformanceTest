@@ -1,0 +1,48 @@
+﻿<Project ToolsVersion="15.0" Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup Label="Configuration">
+    <DefineConstants>TRACE;DEBUG;NETCORE</DefineConstants>
+    <Platforms>AnyCPU;x64</Platforms>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetFrameworks>net45;net461;netcoreapp1.0;netstandard1.6;netstandard2.0</TargetFrameworks>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PackageId>stream-net</PackageId>
+    <Version>2.1.0</Version>
+    <PackageVersion>2.1.0</PackageVersion>
+    <Authors>Shawn Beach</Authors>
+    <Description>A library for building newsfeed and activity stream applications with http://getstream.io</Description>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <PackageReleaseNotes>StreamClient now implements IDisposable and holds a reference to HttpClient. A single instance of StreamClient should be used with a given process</PackageReleaseNotes>
+    <Copyright>Copyright 2018</Copyright>
+    <PackageProjectUrl>https://github.com/shawnspeak/stream-net</PackageProjectUrl>
+    <PackageLicenseUrl>https://github.com/shawnspeak/stream-net/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageTags>getstreamio</PackageTags>
+  </PropertyGroup>
+  <PropertyGroup Condition="  '$(TargetFramework)' == 'net45' ">
+    <DefineConstants>NET45</DefineConstants>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="9.0.1" />
+  </ItemGroup>
+  <ItemGroup Condition=" '$(TargetFramework)' == 'net45'">
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup Condition=" '$(TargetFramework)' == 'net461'">
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>  
+</Project>
